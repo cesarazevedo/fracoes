@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -43,15 +43,15 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
             margin-bottom: 30px;
         }
 
         .game-card {
             background: white;
             border-radius: 20px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
@@ -60,11 +60,31 @@
             transform: translateY(-5px);
         }
 
+        .game-card.advanced {
+            border: 3px solid #f6ad55;
+            background: linear-gradient(135deg, #fff8f0 0%, #ffffff 100%);
+        }
+
         .game-title {
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: #5a67d8;
             margin-bottom: 15px;
             text-align: center;
+        }
+
+        .game-title.advanced {
+            color: #d69e2e;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            background: #f6ad55;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
         }
 
         /* Jogo da Pizza */
@@ -76,14 +96,14 @@
 
         .pizza {
             display: grid;
-            grid-template-columns: repeat(8, 40px);
+            grid-template-columns: repeat(8, 35px);
             gap: 2px;
             margin: 10px;
         }
 
         .pizza-slice {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: #f7fafc;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
@@ -108,6 +128,8 @@
             justify-content: space-around;
             align-items: center;
             margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .fraction-visual {
@@ -117,7 +139,7 @@
         }
 
         .fraction-display {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: bold;
             color: #5a67d8;
             margin-bottom: 10px;
@@ -126,14 +148,18 @@
         .bars-container {
             display: flex;
             gap: 2px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 150px;
         }
 
         .bar {
-            width: 30px;
-            height: 60px;
+            width: 20px;
+            height: 50px;
             background: #e2e8f0;
             border: 2px solid #cbd5e0;
             border-radius: 4px;
+            margin: 1px;
         }
 
         .bar.filled {
@@ -141,11 +167,12 @@
         }
 
         .comparison-symbol {
-            font-size: 3em;
+            font-size: 2.5em;
             font-weight: bold;
             color: #e53e3e;
             cursor: pointer;
             transition: transform 0.3s ease;
+            padding: 10px;
         }
 
         .comparison-symbol:hover {
@@ -157,13 +184,13 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 25px;
-            font-size: 1em;
+            font-size: 0.9em;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin: 5px;
+            margin: 3px;
         }
 
         .btn:hover {
@@ -184,17 +211,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin: 20px 0;
+            flex-wrap: wrap;
         }
 
         .fraction-input {
-            width: 60px;
-            height: 40px;
+            width: 50px;
+            height: 35px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: bold;
         }
 
@@ -208,39 +236,69 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             margin: 20px 0;
             flex-wrap: wrap;
         }
 
         .fraction-blocks {
             display: flex;
-            gap: 3px;
+            gap: 2px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 120px;
         }
 
         .block {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             border: 2px solid #cbd5e0;
-            border-radius: 6px;
+            border-radius: 4px;
             background: #f7fafc;
+            margin: 1px;
         }
 
         .block.filled {
             background: #4299e1;
         }
 
+        .block.filled2 {
+            background: #ed8936;
+        }
+
         .sum-symbol {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: bold;
             color: #5a67d8;
+        }
+
+        /* Passos da Resolução */
+        .steps-container {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .step {
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .step.highlight {
+            background: #c6f6d5;
+            border-left: 4px solid #48bb78;
         }
 
         /* Feedback */
         .feedback {
             text-align: center;
-            padding: 15px;
-            margin: 15px 0;
+            padding: 12px;
+            margin: 12px 0;
             border-radius: 12px;
             font-weight: bold;
             display: none;
@@ -268,6 +326,17 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             font-weight: bold;
             color: #5a67d8;
+            z-index: 1000;
+        }
+
+        /* Simplificação */
+        .simplify-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 768px) {
@@ -278,11 +347,15 @@
                 font-size: 2em;
             }
             .pizza {
-                grid-template-columns: repeat(4, 35px);
+                grid-template-columns: repeat(4, 30px);
             }
             .pizza-slice {
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                height: 30px;
+            }
+            .comparison-container {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
@@ -295,7 +368,7 @@
     <div class="container">
         <div class="header">
             <h1>🎮 Jogos de Frações</h1>
-            <p>Aprenda brincando! Clique, explore e descubra o mundo das frações</p>
+            <p>Aprenda brincando! Do básico ao avançado com denominadores diferentes</p>
         </div>
 
         <div class="games-grid">
@@ -322,10 +395,10 @@
                 <div class="feedback" id="pizzaFeedback"></div>
             </div>
 
-            <!-- Jogo 2: Comparando Frações -->
-            <div class="game-card">
-                <h2 class="game-title">⚖️ Compare as Frações</h2>
-                <p style="text-align: center; margin-bottom: 15px;">Qual fração é maior? Clique no símbolo correto!</p>
+            <!-- Jogo 2: Comparando Frações (Com denominadores diferentes) -->
+            <div class="game-card advanced">
+                <h2 class="game-title advanced">⚖️ Compare Frações Diferentes <span class="difficulty-badge">AVANÇADO</span></h2>
+                <p style="text-align: center; margin-bottom: 15px;">Frações com denominadores diferentes! Qual é maior?</p>
                 
                 <div class="comparison-container" id="comparisonGame">
                     <!-- Será preenchido pelo JS -->
@@ -348,8 +421,8 @@
                     <span class="sum-symbol">=</span>
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <input type="number" class="fraction-input" id="equivalentNum" min="1" max="20">
-                        <div style="width: 60px; height: 2px; background: #333; margin: 2px 0;"></div>
-                        <span id="equivalentDen" style="font-size: 1.2em; font-weight: bold;">4</span>
+                        <div style="width: 50px; height: 2px; background: #333; margin: 2px 0;"></div>
+                        <span id="equivalentDen" style="font-size: 1.1em; font-weight: bold;">4</span>
                     </div>
                 </div>
                 
@@ -361,21 +434,21 @@
                 <div class="feedback" id="equivalenceFeedback"></div>
             </div>
 
-            <!-- Jogo 4: Somando Frações -->
+            <!-- Jogo 4: Somando Frações Iguais -->
             <div class="game-card">
-                <h2 class="game-title">➕ Somando Frações</h2>
-                <p style="text-align: center; margin-bottom: 15px;">Veja a soma visual e digite o resultado!</p>
+                <h2 class="game-title">➕ Somando Frações Iguais</h2>
+                <p style="text-align: center; margin-bottom: 15px;">Mesmo denominador - só somar em cima!</p>
                 
                 <div class="sum-container" id="sumGame">
                     <!-- Será preenchido pelo JS -->
                 </div>
                 
-                <div style="text-align: center; margin: 20px 0;">
-                    <span style="font-size: 1.2em;">Resultado: </span>
+                <div style="text-align: center; margin: 15px 0;">
+                    <span style="font-size: 1.1em;">Resultado: </span>
                     <div style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 10px;">
                         <input type="number" class="fraction-input" id="resultNum" min="1" max="20">
-                        <div style="width: 60px; height: 2px; background: #333; margin: 2px 0;"></div>
-                        <span id="resultDen" style="font-size: 1.2em; font-weight: bold;">8</span>
+                        <div style="width: 50px; height: 2px; background: #333; margin: 2px 0;"></div>
+                        <span id="resultDen" style="font-size: 1.1em; font-weight: bold;">8</span>
                     </div>
                 </div>
                 
@@ -386,6 +459,69 @@
                 
                 <div class="feedback" id="sumFeedback"></div>
             </div>
+
+            <!-- Jogo 5: NOVO - Somando Denominadores Diferentes -->
+            <div class="game-card advanced">
+                <h2 class="game-title advanced">🧮 Soma com Denominadores Diferentes <span class="difficulty-badge">DESAFIO</span></h2>
+                <p style="text-align: center; margin-bottom: 15px;">O grande desafio! Precisa achar denominador comum.</p>
+                
+                <div class="sum-container" id="diffSumGame">
+                    <!-- Será preenchido pelo JS -->
+                </div>
+
+                <div class="steps-container" id="stepsContainer">
+                    <strong>🔍 Passos da Resolução:</strong>
+                    <div id="stepsContent">
+                        <!-- Passos serão mostrados aqui -->
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 15px 0;">
+                    <span style="font-size: 1.1em;">Resultado Final: </span>
+                    <div style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 10px;">
+                        <input type="number" class="fraction-input" id="diffResultNum" min="1" max="50">
+                        <div style="width: 50px; height: 2px; background: #333; margin: 2px 0;"></div>
+                        <input type="number" class="fraction-input" id="diffResultDen" min="1" max="50">
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="btn" onclick="generateDifferentSum()">🔄 Nova Soma</button>
+                    <button class="btn" onclick="showSteps()">👁️ Ver Passos</button>
+                    <button class="btn success" onclick="checkDifferentSum()">✅ Verificar</button>
+                </div>
+                
+                <div class="feedback" id="diffSumFeedback"></div>
+            </div>
+
+            <!-- Jogo 6: NOVO - Simplificando Frações -->
+            <div class="game-card advanced">
+                <h2 class="game-title advanced">⚡ Simplificar Frações <span class="difficulty-badge">EXPERT</span></h2>
+                <p style="text-align: center; margin-bottom: 15px;">Transforme em fração mais simples!</p>
+                
+                <div class="simplify-container">
+                    <span class="fraction-display" id="complexFraction">12/18</span>
+                    <span class="sum-symbol">=</span>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <input type="number" class="fraction-input" id="simpleNum" min="1" max="20">
+                        <div style="width: 50px; height: 2px; background: #333; margin: 2px 0;"></div>
+                        <input type="number" class="fraction-input" id="simpleDen" min="1" max="20">
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 15px 0; font-size: 0.9em;">
+                    <p>💡 <strong>Dica:</strong> Encontre o maior número que divide os dois!</p>
+                    <p id="gcdHint" style="color: #666; margin-top: 5px;"></p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="btn" onclick="generateSimplify()">🔄 Nova Fração</button>
+                    <button class="btn" onclick="showGCDHint()">💡 Dica</button>
+                    <button class="btn success" onclick="checkSimplify()">✅ Verificar</button>
+                </div>
+                
+                <div class="feedback" id="simplifyFeedback"></div>
+            </div>
         </div>
     </div>
 
@@ -395,6 +531,23 @@
         let currentComparison = {};
         let currentEquivalence = {};
         let currentSum = {};
+        let currentDiffSum = {};
+        let currentSimplify = {};
+
+        // Função para calcular MDC (Maior Divisor Comum)
+        function gcd(a, b) {
+            while (b !== 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        // Função para calcular MMC (Mínimo Múltiplo Comum)
+        function lcm(a, b) {
+            return (a * b) / gcd(a, b);
+        }
 
         // Atualizar pontuação
         function updateScore(points) {
@@ -410,7 +563,7 @@
             feedback.style.display = 'block';
             setTimeout(() => {
                 feedback.style.display = 'none';
-            }, 3000);
+            }, 4000);
         }
 
         // JOGO 1: Pizza de Frações
@@ -423,7 +576,6 @@
                 slice.onclick = () => toggleSlice(slice, i);
                 pizza.appendChild(slice);
             }
-            currentPizzaTarget = Math.floor(Math.random() * 7) + 1; // 1-7
             updatePizzaDisplay();
         }
 
@@ -445,13 +597,16 @@
             const activeSlices = document.querySelectorAll('.pizza-slice.active').length;
             if (activeSlices > 0) {
                 updateScore(10);
-                showFeedback('pizzaFeedback', `🎉 Ótimo! Você fez ${activeSlices}/8 da pizza!`, true);
+                let message = `🎉 Ótimo! Você fez ${activeSlices}/8 da pizza!`;
+                if (activeSlices === 4) message += " Isso é igual a 1/2!";
+                if (activeSlices === 2) message += " Isso é igual a 1/4!";
+                showFeedback('pizzaFeedback', message, true);
             } else {
                 showFeedback('pizzaFeedback', 'Clique em alguns pedaços primeiro!', false);
             }
         }
 
-        // JOGO 2: Comparando Frações
+        // JOGO 2: Comparando Frações com denominadores diferentes
         function generateComparison() {
             const fractions = [
                 {num: 1, den: 2, value: 0.5},
@@ -460,12 +615,17 @@
                 {num: 2, den: 3, value: 0.667},
                 {num: 3, den: 4, value: 0.75},
                 {num: 2, den: 5, value: 0.4},
-                {num: 3, den: 5, value: 0.6}
+                {num: 3, den: 5, value: 0.6},
+                {num: 1, den: 6, value: 0.167},
+                {num: 5, den: 6, value: 0.833},
+                {num: 2, den: 7, value: 0.286},
+                {num: 3, den: 8, value: 0.375},
+                {num: 5, den: 8, value: 0.625}
             ];
 
             const frac1 = fractions[Math.floor(Math.random() * fractions.length)];
             let frac2 = fractions[Math.floor(Math.random() * fractions.length)];
-            while (frac1.value === frac2.value) {
+            while (Math.abs(frac1.value - frac2.value) < 0.1) {
                 frac2 = fractions[Math.floor(Math.random() * fractions.length)];
             }
 
@@ -480,6 +640,7 @@
                             <div class="bar ${i < frac1.num ? 'filled' : ''}"></div>
                         `).join('')}
                     </div>
+                    <small style="color: #666;">${(frac1.value * 100).toFixed(1)}%</small>
                 </div>
                 <div>
                     <div class="comparison-symbol" onclick="checkComparison('<')">&lt;</div>
@@ -493,6 +654,7 @@
                             <div class="bar ${i < frac2.num ? 'filled' : ''}"></div>
                         `).join('')}
                     </div>
+                    <small style="color: #666;">${(frac2.value * 100).toFixed(1)}%</small>
                 </div>
             `;
         }
@@ -503,13 +665,13 @@
             
             if (symbol === '<' && frac1.value < frac2.value) correct = true;
             if (symbol === '>' && frac1.value > frac2.value) correct = true;
-            if (symbol === '=' && frac1.value === frac2.value) correct = true;
+            if (symbol === '=' && Math.abs(frac1.value - frac2.value) < 0.01) correct = true;
 
             if (correct) {
-                updateScore(15);
-                showFeedback('comparisonFeedback', `🎉 Correto! ${frac1.num}/${frac1.den} ${symbol} ${frac2.num}/${frac2.den}`, true);
+                updateScore(20);
+                showFeedback('comparisonFeedback', `🎉 Correto! ${frac1.num}/${frac1.den} ${symbol} ${frac2.num}/${frac2.den}. Compare as porcentagens!`, true);
             } else {
-                showFeedback('comparisonFeedback', '❌ Tente novamente! Observe as barras coloridas.', false);
+                showFeedback('comparisonFeedback', '❌ Tente novamente! Olhe as barras coloridas e as porcentagens.', false);
             }
         }
 
@@ -520,7 +682,9 @@
                 {num: 1, den: 3},
                 {num: 2, den: 3},
                 {num: 1, den: 4},
-                {num: 3, den: 4}
+                {num: 3, den: 4},
+                {num: 2, den: 5},
+                {num: 3, den: 5}
             ];
 
             const original = base[Math.floor(Math.random() * base.length)];
@@ -540,17 +704,16 @@
         function checkEquivalence() {
             const userAnswer = parseInt(document.getElementById('equivalentNum').value);
             if (userAnswer === currentEquivalence.correctNum) {
-                updateScore(20);
+                updateScore(15);
                 showFeedback('equivalenceFeedback', `🎉 Perfeito! ${currentEquivalence.original.num}/${currentEquivalence.original.den} = ${userAnswer}/${currentEquivalence.newDen}`, true);
             } else {
-                showFeedback('equivalenceFeedback', `❌ Não é isso! Dica: multiplique ${currentEquivalence.original.num} pelo mesmo número que transformou ${currentEquivalence.original.den} em ${currentEquivalence.newDen}`, false);
+                showFeedback('equivalenceFeedback', `❌ Não é isso! Dica: ${currentEquivalence.original.den} × ? = ${currentEquivalence.newDen}. Faça a mesma conta com ${currentEquivalence.original.num}`, false);
             }
         }
 
-        // JOGO 4: Somando Frações
+        // JOGO 4: Somando Frações com mesmo denominador
         function generateSum() {
-            // Usar denominador comum para simplificar
-            const den = 8;
+            const den = Math.floor(Math.random() * 4) + 6; // 6-9
             const num1 = Math.floor(Math.random() * 3) + 1; // 1-3
             const num2 = Math.floor(Math.random() * 3) + 1; // 1-3
             
@@ -575,7 +738,7 @@
                     <div class="fraction-display">${num2}/${den}</div>
                     <div class="fraction-blocks">
                         ${Array.from({length: den}, (_, i) => `
-                            <div class="block ${i < num2 ? 'filled' : ''}"></div>
+                            <div class="block ${i < num2 ? 'filled2' : ''}"></div>
                         `).join('')}
                     </div>
                 </div>
@@ -590,10 +753,121 @@
         function checkSum() {
             const userAnswer = parseInt(document.getElementById('resultNum').value);
             if (userAnswer === currentSum.result) {
-                updateScore(25);
+                updateScore(20);
                 showFeedback('sumFeedback', `🎉 Excelente! ${currentSum.frac1.num}/${currentSum.frac1.den} + ${currentSum.frac2.num}/${currentSum.frac2.den} = ${userAnswer}/${currentSum.frac1.den}`, true);
             } else {
-                showFeedback('sumFeedback', `❌ Quase lá! Conte todos os quadradinhos azuis. Tem ${currentSum.result} no total!`, false);
+                showFeedback('sumFeedback', `❌ Quase lá! Some os quadradinhos coloridos: ${currentSum.frac1.num} + ${currentSum.frac2.num} = ${currentSum.result}`, false);
+            }
+        }
+
+        // JOGO 5: NOVO - Somando com denominadores diferentes
+        function generateDifferentSum() {
+            const pairs = [
+                {f1: {num: 1, den: 2}, f2: {num: 1, den: 3}},
+                {f1: {num: 1, den: 2}, f2: {num: 1, den: 4}},
+                {f1: {num: 1, den: 3}, f2: {num: 1, den: 4}},
+                {f1: {num: 1, den: 3}, f2: {num: 1, den: 6}},
+                {f1: {num: 2, den: 3}, f2: {num: 1, den: 4}},
+                {f1: {num: 1, den: 4}, f2: {num: 1, den: 6}},
+                {f1: {num: 3, den: 4}, f2: {num: 1, den: 6}}
+            ];
+
+            const pair = pairs[Math.floor(Math.random() * pairs.length)];
+            const commonDen = lcm(pair.f1.den, pair.f2.den);
+            
+            currentDiffSum = {
+                frac1: pair.f1,
+                frac2: pair.f2,
+                commonDen: commonDen,
+                newNum1: (pair.f1.num * commonDen) / pair.f1.den,
+                newNum2: (pair.f2.num * commonDen) / pair.f2.den,
+                resultNum: ((pair.f1.num * commonDen) / pair.f1.den) + ((pair.f2.num * commonDen) / pair.f2.den),
+                resultDen: commonDen
+            };
+
+            const container = document.getElementById('diffSumGame');
+            container.innerHTML = `
+                <div style="text-align: center;">
+                    <div class="fraction-display" style="color: #e53e3e;">${pair.f1.num}/${pair.f1.den}</div>
+                    <small style="color: #666;">Denominador: ${pair.f1.den}</small>
+                </div>
+                <div class="sum-symbol">+</div>
+                <div style="text-align: center;">
+                    <div class="fraction-display" style="color: #d69e2e;">${pair.f2.num}/${pair.f2.den}</div>
+                    <small style="color: #666;">Denominador: ${pair.f2.den}</small>
+                </div>
+                <div class="sum-symbol">=</div>
+                <div class="sum-symbol">?</div>
+            `;
+
+            document.getElementById('diffResultNum').value = '';
+            document.getElementById('diffResultDen').value = '';
+            document.getElementById('stepsContent').innerHTML = '<p style="color: #666;">Clique em "Ver Passos" para entender como resolver!</p>';
+        }
+
+        function showSteps() {
+            const {frac1, frac2, commonDen, newNum1, newNum2, resultNum} = currentDiffSum;
+            
+            document.getElementById('stepsContent').innerHTML = `
+                <div class="step">1️⃣ <strong>Encontrar denominador comum:</strong> MMC(${frac1.den}, ${frac2.den}) = ${commonDen}</div>
+                <div class="step">2️⃣ <strong>Converter primeira fração:</strong> ${frac1.num}/${frac1.den} = ${newNum1}/${commonDen} (multiplica por ${commonDen/frac1.den})</div>
+                <div class="step">3️⃣ <strong>Converter segunda fração:</strong> ${frac2.num}/${frac2.den} = ${newNum2}/${commonDen} (multiplica por ${commonDen/frac2.den})</div>
+                <div class="step">4️⃣ <strong>Somar:</strong> ${newNum1}/${commonDen} + ${newNum2}/${commonDen} = ${resultNum}/${commonDen}</div>
+                <div class="step highlight">🎯 <strong>Resposta:</strong> ${resultNum}/${commonDen}</div>
+            `;
+        }
+
+        function checkDifferentSum() {
+            const userNum = parseInt(document.getElementById('diffResultNum').value);
+            const userDen = parseInt(document.getElementById('diffResultDen').value);
+            
+            if (userNum === currentDiffSum.resultNum && userDen === currentDiffSum.resultDen) {
+                updateScore(30);
+                showFeedback('diffSumFeedback', `🎉🎉 INCRÍVEL! ${currentDiffSum.frac1.num}/${currentDiffSum.frac1.den} + ${currentDiffSum.frac2.num}/${currentDiffSum.frac2.den} = ${userNum}/${userDen}. Você dominou denominadores diferentes!`, true);
+            } else {
+                showFeedback('diffSumFeedback', `❌ Não é isso! Use os passos: encontre o MMC(${currentDiffSum.frac1.den}, ${currentDiffSum.frac2.den}) = ${currentDiffSum.commonDen} e converta as frações.`, false);
+            }
+        }
+
+        // JOGO 6: NOVO - Simplificando Frações
+        function generateSimplify() {
+            const complex = [
+                {num: 6, den: 9, simpleNum: 2, simpleDen: 3},
+                {num: 8, den: 12, simpleNum: 2, simpleDen: 3},
+                {num: 10, den: 15, simpleNum: 2, simpleDen: 3},
+                {num: 12, den: 18, simpleNum: 2, simpleDen: 3},
+                {num: 4, den: 8, simpleNum: 1, simpleDen: 2},
+                {num: 6, den: 12, simpleNum: 1, simpleDen: 2},
+                {num: 9, den: 12, simpleNum: 3, simpleDen: 4},
+                {num: 15, den: 20, simpleNum: 3, simpleDen: 4},
+                {num: 14, den: 21, simpleNum: 2, simpleDen: 3},
+                {num: 16, den: 24, simpleNum: 2, simpleDen: 3}
+            ];
+
+            currentSimplify = complex[Math.floor(Math.random() * complex.length)];
+
+            document.getElementById('complexFraction').textContent = `${currentSimplify.num}/${currentSimplify.den}`;
+            document.getElementById('simpleNum').value = '';
+            document.getElementById('simpleDen').value = '';
+            document.getElementById('gcdHint').textContent = '';
+        }
+
+        function showGCDHint() {
+            const gcdValue = gcd(currentSimplify.num, currentSimplify.den);
+            document.getElementById('gcdHint').textContent = `💡 O maior número que divide ${currentSimplify.num} e ${currentSimplify.den} é ${gcdValue}`;
+        }
+
+        function checkSimplify() {
+            const userNum = parseInt(document.getElementById('simpleNum').value);
+            const userDen = parseInt(document.getElementById('simpleDen').value);
+            
+            if (userNum === currentSimplify.simpleNum && userDen === currentSimplify.simpleDen) {
+                updateScore(25);
+                const gcdValue = gcd(currentSimplify.num, currentSimplify.den);
+                showFeedback('simplifyFeedback', `🎉 Perfeito! ${currentSimplify.num}/${currentSimplify.den} = ${userNum}/${userDen} (dividindo por ${gcdValue})`, true);
+            } else {
+                const gcdValue = gcd(currentSimplify.num, currentSimplify.den);
+                showFeedback('simplifyFeedback', `❌ Tente novamente! Dica: divida ${currentSimplify.num} e ${currentSimplify.den} por ${gcdValue}`, false);
             }
         }
 
@@ -603,6 +877,8 @@
             generateComparison();
             generateEquivalence();
             generateSum();
+            generateDifferentSum();
+            generateSimplify();
         };
     </script>
 </body>
